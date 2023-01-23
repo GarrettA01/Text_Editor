@@ -24,9 +24,15 @@ SO THAT I can reliably retrieve them for later use
 
 ## Installation
 
+npm i, npm start and download pwa, or just hit my Heroku site [here](https://text-editorg.herokuapp.com/)
+
 ## Usage
 
+This is a text editor. You can input text, and with the downloadable app, you can edit text offline!
+
 ## Credits
+
+[Starter Code](https://github.com/coding-boot-camp/cautious-meme)
 
 ## Tests
 
