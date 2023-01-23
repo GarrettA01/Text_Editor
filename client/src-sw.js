@@ -1,5 +1,6 @@
 const { offlineFallback, warmStrategyCache } = require("workbox-recipes");
-const { CacheFirst } = require("workbox-strategies");
+// added StaleWhileRevalidate to check the cache for requested info
+const { CacheFirst, StaleWhileRevalidate } = require("workbox-strategies");
 const { registerRoute } = require("workbox-routing");
 const { CacheableResponsePlugin } = require("workbox-cacheable-response");
 const { ExpirationPlugin } = require("workbox-expiration");
@@ -33,7 +34,6 @@ registerRoute(
     ({ request }) =>
       ["style", "script", "worker"].includes(request.destination),
     new StaleWhileRevalidate({
-      // name of cache storage
       cacheName: "asset-cache",
       plugins: [
         // this plugin will cache responses with these headers to a max age of 30 days
